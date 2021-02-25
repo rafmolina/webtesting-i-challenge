@@ -37,3 +37,21 @@ describe("success class", ()=>{
         expect(newItem.durability).toBe(expectedItem.durability)
     })
 });
+
+describe("fail class", ()=>{
+    it("fail", ()=>{
+        const item = {
+            name: "sword",
+            durability: 100,
+            enhancement: 19
+        }
+        const expectedItem = {
+            name: "sword",
+            durability: 90,
+            enhancement: 18
+        }
+        const newItem = enhancer.fail(item)
+        expect(newItem.enhancement).toBe(expectedItem.enhancement)
+        expect(newItem.durability).toBe(expectedItem.durability)
+    })
+})
