@@ -19,3 +19,21 @@ describe("repair class", () =>{
 
     })
 });
+
+describe("success class", ()=>{
+    it("success", ()=>{
+        const item = {
+            name: "sword",
+            durability: 100,
+            enhancement: 1
+        }
+        const expectedItem = {
+            name: "sword",
+            durability: 100,
+            enhancement: 2
+        }
+        const newItem = enhancer.success(item)
+        expect(newItem.enhancement).toBe(expectedItem.enhancement)
+        expect(newItem.durability).toBe(expectedItem.durability)
+    })
+});
